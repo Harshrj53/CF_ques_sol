@@ -1,0 +1,16 @@
+
+def func(n,num):
+    max_product=0
+    for i in range(n):
+        b=num.copy()
+        b[i]+=1
+        prod=1
+        for val in b:
+            prod*=val
+        max_product=max(max_product,prod)
+    return max_product
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    num=list(map(int,input().split()))
+    print(func(n,num))
